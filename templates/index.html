@@ -1,0 +1,37 @@
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>websocket chat</h1>
+
+        <input type="text" id="msg" value="> message"/>
+        <button id="sendBtn">send</button>
+        <ul id="rcv"></ul>
+
+        </hr>
+
+        <p id="text-field"></p>
+    </body>
+
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript">
+        var host = "ws://localhost:8000/pipe";
+        var ws = new WebSocket(host);
+
+        ws.onmessage = function(message){
+            var message_data = JSON.parse(message.data);
+            var time = message_data['time'];
+            var message = message_data['message'];
+
+            var string_txt = "[" + time + "] - " + message
+            $("#rcv").append("<li>" + string_txt + "</li>")
+        }
+
+        $("#sendBtn").on("click",function(){
+            message = $("#msg").val()
+            ws.send(message);
+        });
+    </script>
+</html>
