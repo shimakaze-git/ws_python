@@ -3,3 +3,14 @@ Flask-Sockets==0.2.1
 gunicorn==19.9.0
 gevent==1.4.0      
 gevent-websocket==0.10.1     
+
+Flask-SocketIO==3.3.2
+python-socketio==4.0.0
+
+# click
+# python-engineio
+# Jinja2
+# itsdangerous
+# MarkupSafe
+# six
+# Werkzeug
