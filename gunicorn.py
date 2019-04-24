@@ -12,13 +12,13 @@ loglevel = 'info'
 logconfig = None
 
 # Server Socket
-bind = '0.0.0.0:8080'
-# bind = '127.0.0.1:8080'
+# bind = '0.0.0.0:8080'
+bind = '127.0.0.1:8080'
 
 # Worker Processes
 worker_class = 'gevent'
-workers = multiprocessing.cpu_count() * 2 + 1
-# workers = 5
+# workers = multiprocessing.cpu_count() * 2 + 1
+workers = 1
 worker_connections = 1024
 # max_requests = 1000
 max_requests = 5120
